@@ -5,11 +5,29 @@
 This repository hosts the documentation for [n8n](https://n8n.io/), an extendable workflow automation tool which enables you to connect anything to everything. The documentation is live at [docs.n8n.io](https://docs.n8n.io/).
 
 # Datasets
-Read these datasets to understand the data structure and content.
+Training datasets for LLM fine-tuning with 3,061+ n8n workflow examples.
 
-* dataset_001.json
-* dataset_002.json
-* dataset_003.json
+* **dataset_001.json** - 3,061 workflow examples (2.5 MB)
+* **dataset_002.json** - Additional examples (4.9 MB)
+* **dataset_003.json** - Advanced examples (14.0 MB)
+
+See [datasets/README.md](datasets/README.md) for format details and usage.
+
+## Using This Repository for LLM Training
+
+This repository provides comprehensive n8n documentation and training data for Large Language Models:
+
+- **📖 [LLM_GUIDE.md](LLM_GUIDE.md)** - Start here! Navigation guide and n8n concepts for LLMs
+- **🎯 [datasets/](datasets/)** - 3,061+ workflow training examples in conversational format
+- **📚 [docs/](docs/)** - Complete n8n documentation (900+ integrations)
+- **🤖 llms-full.txt** - Auto-generated LLM-optimized documentation (created during build)
+
+### Quick Start for LLMs
+
+1. Read [LLM_GUIDE.md](LLM_GUIDE.md) for repository structure and n8n concepts
+2. Browse [datasets/README.md](datasets/README.md) for training data format
+3. Use `/docs` for detailed integration and feature documentation
+4. Complement with [n8n-mcp](https://github.com/n8n-io/n8n-mcp) for real-time workflow execution
 
 ## Previewing and building the documentation locally
 
