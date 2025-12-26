@@ -15,19 +15,102 @@ See [datasets/README.md](datasets/README.md) for format details and usage.
 
 ## Using This Repository for LLM Training
 
-This repository provides comprehensive n8n documentation and training data for Large Language Models:
+This repository serves two main purposes:
+1. **Documentation Website**: Source for [docs.n8n.io](https://docs.n8n.io/) (built with MkDocs)
+2. **LLM Training & Reference**: Structured documentation and datasets for AI model training
 
-- **📖 [LLM_GUIDE.md](LLM_GUIDE.md)** - Start here! Navigation guide and n8n concepts for LLMs
-- **🎯 [datasets/](datasets/)** - 3,061+ workflow training examples in conversational format
-- **📚 [docs/](docs/)** - Complete n8n documentation (900+ integrations)
-- **🤖 llms-full.txt** - Auto-generated LLM-optimized documentation (created during build)
+### 📚 Quick Navigation for LLMs
 
-### Quick Start for LLMs
+| Topic | Path | Description |
+|-------|------|-------------|
+| **Integrations** | `/docs/integrations/` | 900+ built-in node integrations |
+| **Workflows** | `/docs/workflows/` | Workflow creation, execution, sharing |
+| **Code** | `/docs/code/` | JavaScript/Python code nodes, expressions |
+| **Hosting** | `/docs/hosting/` | Self-hosting, cloud deployment, configuration |
+| **API** | `/docs/api/` | REST API reference |
+| **Data Operations** | `/docs/data/` | Data transformation, filtering, merging |
+| **Flow Logic** | `/docs/flow-logic/` | Conditional routing, loops, error handling |
+| **Credentials** | `/docs/credentials/` | Authentication and secret management |
 
-1. Read [LLM_GUIDE.md](LLM_GUIDE.md) for repository structure and n8n concepts
-2. Browse [datasets/README.md](datasets/README.md) for training data format
-3. Use `/docs` for detailed integration and feature documentation
-4. Complement with [n8n-mcp](https://github.com/n8n-io/n8n-mcp) for real-time workflow execution
+### 🎯 Training Datasets
+
+- **[datasets/README.md](datasets/README.md)** - 3,061+ workflow examples in conversational format
+- **dataset_001.json** - 3,061 examples ✅ Valid
+- **dataset_002.json** - Additional examples ⚠️ May need repair
+- **dataset_003.json** - Advanced examples ⚠️ May need repair
+
+### 🔧 Key n8n Concepts
+
+#### Nodes
+Building blocks of workflows. Three main types:
+- **Trigger Nodes**: Start workflows (webhooks, schedules, app events)
+- **Action Nodes**: Perform operations (send email, create record, API calls)
+- **Core Nodes**: Data transformation (Set, Code, If, Switch, Merge)
+
+#### Workflows
+Connected sequences of nodes that automate tasks:
+```json
+{
+  "name": "Workflow Name",
+  "nodes": [...],
+  "connections": {...},
+  "active": true/false
+}
+```
+
+#### Expressions
+JavaScript expressions for dynamic data:
+- `{{ $json.fieldName }}` - Access current item data
+- `{{ $node["Node Name"].json }}` - Reference other node data
+- `{{ DateTime.now() }}` - Use utility functions
+
+### ❓ Finding Information
+
+| Question | Location |
+|----------|----------|
+| Connect to a specific app? | `/docs/integrations/builtin/app-nodes/` |
+| Write JavaScript code? | `/docs/code/builtin/code/` |
+| Set up webhooks? | `/docs/flow-logic/trigger-nodes/` |
+| Deploy n8n? | `/docs/hosting/` |
+| Handle errors? | `/docs/flow-logic/error-handling/` |
+| Transform data? | `/docs/data/data-transformation/` |
+| Use environment variables? | `/docs/hosting/configuration/environment-variables/` |
+
+### 🔍 Common Integrations
+
+Most frequently used (see `/docs/integrations/builtin/app-nodes/`):
+- Gmail, Google Sheets, Google Drive, Google Calendar
+- Slack, Microsoft Teams, Discord
+- Airtable, Notion, Monday
+- Stripe, PayPal, Shopify
+- GitHub, GitLab, Bitbucket
+- OpenAI, Anthropic, Hugging Face
+
+### 🤖 LLM-Optimized Output
+
+Generate `llms-full.txt` - complete documentation in one LLM-friendly file:
+```bash
+pip install -r requirements.txt
+mkdocs build
+# Output: llms-full.txt
+```
+
+Ideal for: RAG systems, context injection, embeddings, quick reference
+
+### 🔗 Integration with n8n-mcp
+
+**This Repository (n8n-docs)**:
+- Static documentation content
+- Training datasets for fine-tuning
+- Workflow examples and patterns
+
+**n8n-mcp Server**:
+- Real-time workflow execution
+- Dynamic workflow search
+- Integration testing
+- Live n8n instance interaction
+
+**Use Together**: Reference this repo for learning n8n, then use n8n-mcp to execute and test workflows.
 
 ## Previewing and building the documentation locally
 
